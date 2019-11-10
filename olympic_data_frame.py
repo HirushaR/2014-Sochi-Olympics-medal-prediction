@@ -19,7 +19,12 @@ df = pd.DataFrame(d)
 # print(e)
 
 #show the Bronze medals atleast have one gold
-brnz_one_gold =df['Bronze'][df['Gold'] >= 1]
+brnz_one_gold =df['Gold'][df['Gold'] >= 1]
 avg = np.mean(brnz_one_gold)
-print(avg)
+#print(avg)
+
+#avg of medls
+medls = df[['Gold','Silver','Bronze']].apply(np.mean)
+print(medls)
+
 
