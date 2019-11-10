@@ -13,8 +13,13 @@ Bronze = [9, 10, 5, 12, 9, 5, 2, 1, 5, 7, 1, 2, 2, 6, 2, 4, 3, 1, 2, 1, 0, 6, 2,
 d = {'Country_name' : pd.Series(contries), 'Gold': pd.Series(Gold), 'Silver': pd.Series(Silver), 'Bronze': pd.Series(Bronze)}
 
 df = pd.DataFrame(d)
-c = df[df['Gold'] >= 1]
-#weathe vale is 1 or greate than one
-e = df['Gold'].map(lambda x: x >= 1)
-print(e)
+# c = df[df['Gold'] >= 1]
+# #weathe vale is 1 or greate than one
+# e = [df['Gold'].map(lambda x: x >= 1)]
+# print(e)
+
+#show the Bronze medals atleast have one gold
+brnz_one_gold =df['Bronze'][df['Gold'] >= 1]
+avg = np.mean(brnz_one_gold)
+print(avg)
 
