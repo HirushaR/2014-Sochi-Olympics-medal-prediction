@@ -25,6 +25,13 @@ avg = np.mean(brnz_one_gold)
 
 #avg of medls
 medls = df[['Gold','Silver','Bronze']].apply(np.mean)
-print(medls)
+# print(medls)
+
+medls_count = df[['Gold','Silver','Bronze']]
+points = np.dot(medls_count, [4,2,1])
+
+olympic_pints ={'Country name':pd.Series(contries), 'Points':pd.Series(points)}
+pdf = pd.DataFrame(olympic_pints)
+print(pdf)
 
 
